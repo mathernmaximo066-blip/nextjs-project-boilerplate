@@ -1045,15 +1045,13 @@ function GiftPage() {
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [editingMemory, setEditingMemory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isEditModalOpen, setIsEditModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "GiftPage.useEffect": ()=>{
-            // Check if user is already authenticated
-            const authStatus = localStorage.getItem('anniversary-auth');
-            if (authStatus === 'true') {
-                setIsAuthenticated(true);
-            }
-        }
-    }["GiftPage.useEffect"], []);
+    // Removed persistent authentication - user must login each time
+    // useEffect(() => {
+    //   const authStatus = localStorage.getItem('anniversary-auth');
+    //   if (authStatus === 'true') {
+    //     setIsAuthenticated(true);
+    //   }
+    // }, []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GiftPage.useEffect": ()=>{
             if (isAuthenticated) {
@@ -1072,7 +1070,7 @@ function GiftPage() {
     const handleLogin = (username, password)=>{
         if (username === 'mivida' && password === 'convos') {
             setIsAuthenticated(true);
-            localStorage.setItem('anniversary-auth', 'true');
+            // Removed localStorage persistence - user must login each time
             return true;
         }
         return false;
@@ -1430,7 +1428,7 @@ function GiftPage() {
         columnNumber: 5
     }, this);
 }
-_s(GiftPage, "/jmagBJHABcMlxNNLZsxqcXhnJA=");
+_s(GiftPage, "AlPI5Fr7UT7/9OUQONOK92jw0pY=");
 _c = GiftPage;
 var _c;
 __turbopack_context__.k.register(_c, "GiftPage");
